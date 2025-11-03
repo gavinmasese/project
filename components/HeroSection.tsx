@@ -99,7 +99,7 @@ const HeroSection: React.FC = () => {
       <div className="relative w-full h-full">
         <Image
           src={images[currentIndex]}
-          alt="Hero Background"
+          alt="Bullione - Pioneering Growth and Investment Excellence in Africa"
           fill
           className="object-cover object-center"
           priority

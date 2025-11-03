@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, Suspense } from "react";
-import Head from "next/head";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
@@ -23,7 +22,7 @@ const BulletCard: React.FC<{
   icon?: React.ReactNode;
   heading?: string;
   text: React.ReactNode;
-}> = ({ icon, heading, text }) => {
+}> = ({ icon, heading, text }: { icon?: React.ReactNode; heading?: string; text: React.ReactNode }) => {
   return (
     <div className="bg-black/5 dark:bg-black/5 rounded-lg shadow-md p-6 flex flex-col gap-3">
       {/* Icon and optional heading */}
@@ -935,8 +934,9 @@ const CardDetailsContent: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-orange-500 text-white px-4 py-2 rounded z-50">Skip to main content</a>
       {details && <AfricanImageSlider images={details.images} title={details.title} />}
-      <div className="flex-grow p-6 md:p-10 lg:p-16">
+      <div id="main-content" className="flex-grow p-4 sm:p-6 md:p-10 lg:p-16 w-full">
         {details ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -944,16 +944,16 @@ const CardDetailsContent: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="max-w-6xl mx-auto"
           >
-            <div className="mb-6">{details.fullContent}</div>
+            <div className="mb-6 text-sm sm:text-base">{details.fullContent}</div>
             <button
               onClick={() => router.back()}
-              className="bg-orange-600 text-white px-4 py-2 rounded mr-4 font-bold hover:bg-orange-500"
+              className="bg-orange-600 text-white px-4 py-2 rounded mr-4 font-bold hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               Go Back
             </button>
             <button
               onClick={() => (window.location.href = "/#contact")}
-              className="bg-orange-600 text-white px-4 py-2 rounded font-bold hover:bg-orange-500"
+              className="bg-orange-600 text-white px-4 py-2 rounded font-bold hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
             >
               Contact Us
             </button>
@@ -983,12 +983,6 @@ const CardDetailsContent: React.FC = () => {
 const CardDetailsPage: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>Bullione Card Details</title>
-        <meta name="description" content="Detailed view of Bullione services and investment opportunities." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="robots" content="index, follow" />
-      </Head>
       <Suspense fallback={<div>Loading card details...</div>}>
         <CardDetailsContent />
       </Suspense>

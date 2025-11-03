@@ -86,14 +86,6 @@ const Section: React.FC<SectionProps> = ({ title, children, className = "" }) =>
 const ValuePropositionSection: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>Value Proposition | Bullione</title>
-        <meta
-          name="description"
-          content="Discover Bullione's unique value proposition, empowering investors with innovative and tailored solutions for success in Africa."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section className="py-24 relative bg-gray-900">
         <div className="container mx-auto px-4">
           <motion.div

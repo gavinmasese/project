@@ -57,14 +57,6 @@ const Card: React.FC<CardProps> = ({ title, content }) => {
 export default function ServicesSection(): JSX.Element {
   return (
     <>
-      <Head>
-        <title>Our Services | Bullione</title>
-        <meta
-          name="description"
-          content="Explore the comprehensive services offered by Bullione, empowering investors and businesses with innovative solutions across Africa."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section id="services" className="py-24 relative bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-6xl text-orange-600 font-bold text-center mb-12">

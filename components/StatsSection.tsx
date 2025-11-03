@@ -70,14 +70,6 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
 const StatsSection: React.FC = () => {
   return (
     <>
-      <Head>
-        <title>Stats | Bullione</title>
-        <meta
-          name="description"
-          content="Discover the performance statistics that underscore the Bullione Promise in Africa."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section className="py-24 bg-gray-900">
         <div className="container mx-auto px-4">
           <motion.div

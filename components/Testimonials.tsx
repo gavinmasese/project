@@ -137,14 +137,6 @@ const TestimonialsSlider: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Testimonials | Bullione</title>
-        <meta
-          name="description"
-          content="Discover what our clients have to say about partnering with Bullione."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
       <section
         id="testimonials"
         className="py-24 bg-orange-600/70 to-transparent text-white"
